@@ -1,11 +1,11 @@
-import { checkAuth, logout, createNewItem, fetchGrocery } from '../fetch-utils.js';
+import { checkAuth, logout, createNewItem, fetchGrocery, removeItems } from '../fetch-utils.js';
 import { renderGroceries } from '../render-utils.js';
 
 checkAuth();
 
 const logoutButton = document.getElementById('logout');
 //const subButton = document.getElementById('addButton');
-// const remButton = document.getElementById('resetButton');
+const remButton = document.getElementById('resetButton');
 const groceryForm = document.getElementById('list');
 const groceryList = document.getElementById('listItems');
 
@@ -31,6 +31,10 @@ async function onLoad() {
     }
     
 }
+
+remButton.addEventListener('click', () => {
+    removeItems();
+});
 
 onLoad();
 

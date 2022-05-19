@@ -53,6 +53,14 @@ export async function fetchGrocery() {
 
 }
 
+export async function removeItems() {
+    const response = await client.from('grocery').delete().match();
+    if (response.data) {
+        return response.data;
+    } else {
+        console.error(response.error);
+    }
+}
 // function checkError({ data, error }) {
 //     return error ? console.error(error) : data;
 // }
