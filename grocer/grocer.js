@@ -24,6 +24,7 @@ groceryForm.addEventListener('submit', async (e) => {
 });
 
 async function onLoad() {
+    groceryList.textContent = '';
     const data = await fetchGrocery();
     for (let grocery of data) {
         const grocerList = renderGroceries(grocery);
@@ -33,7 +34,15 @@ async function onLoad() {
 }
 
 remButton.addEventListener('click', () => {
-    removeItems();
+    const user = checkAuth();
+    
+    removeItems(user.id);
+    onLoad();
+    // const data = await fetchGrocery();
+    // for (let grocery of data) {
+    //     const grocerList = renderGroceries(grocery);
+    //     grocerList.append(grocerList);
+    // }
 });
 
 onLoad();

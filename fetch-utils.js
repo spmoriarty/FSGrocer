@@ -9,8 +9,9 @@ export function getUser() {
 
 export function checkAuth() {
     const user = getUser();
-
+    
     if (!user) location.replace('../');
+    return user;
 }
 
 export function redirectIfLoggedIn() {
@@ -53,8 +54,8 @@ export async function fetchGrocery() {
 
 }
 
-export async function removeItems() {
-    const response = await client.from('grocery').delete().match();
+export async function removeItems(id) {
+    const response = await client.from('grocery').delete().eq('user_id', id);
     if (response.data) {
         return response.data;
     } else {

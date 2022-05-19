@@ -2,8 +2,12 @@
 
 
 export function renderGroceries(grocery) {
+
+    
+
     const div = document.createElement('div');
     div.classList.add('added');
+
 
     // const a = document.createElement('a');
     // a.href = post.contact;
