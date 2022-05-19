@@ -37,8 +37,8 @@ export async function logout() {
     return (window.location.href = '../');
 }
 
-export async function createNewItem(grocery) {
-    const response = await client.from('grocery').insert(grocery);
+export async function createNewItem(item, qty) {
+    const response = await client.from('grocery').insert({ item, qty });
     if (response.data) {
         return response.data;
     } else {
@@ -48,7 +48,7 @@ export async function createNewItem(grocery) {
 
 export async function fetchGrocery() {
     const response = await client.from('grocery').select('*');
-    // console.log(post[0]);
+    
     return response.data;
 
 }
