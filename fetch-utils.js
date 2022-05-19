@@ -40,6 +40,7 @@ export async function logout() {
 
 export async function createNewItem(item, qty) {
     const response = await client.from('grocery').insert({ item, qty });
+
     if (response.data) {
         return response.data;
     } else {
@@ -61,6 +62,14 @@ export async function removeItems(id) {
     } else {
         console.error(response.error);
     }
+}
+
+export async function togglePurchased(item) {
+    
+    const response = await client.from('grocery').update({ purchased: !item.purchased}).match( id, item.id);
+    
+    return response.data;
+
 }
 // function checkError({ data, error }) {
 //     return error ? console.error(error) : data;

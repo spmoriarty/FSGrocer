@@ -20,6 +20,7 @@ groceryForm.addEventListener('submit', async (e) => {
     };
     const resp = await createNewItem(newItem.item, newItem.qty);
     console.log(resp);
+    
     onLoad();
 });
 
