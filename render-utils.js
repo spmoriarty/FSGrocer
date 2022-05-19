@@ -1,7 +1,7 @@
 
 
 
-export function renderGroceries(grocery)) {
+export function renderGroceries(grocery) {
     const div = document.createElement('div');
     div.classList.add('added');
 

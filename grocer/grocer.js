@@ -1,5 +1,5 @@
 import { checkAuth, logout, createNewItem } from '../fetch-utils.js';
-import { renderGroceries } from '..render-utils.js';
+import { renderGroceries } from '../render-utils.js';
 
 checkAuth();
 
