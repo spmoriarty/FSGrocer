@@ -37,8 +37,8 @@ export async function logout() {
     return (window.location.href = '../');
 }
 
-export async function createNewItem(newItem) {
-    const response = await client.from('grocery').insert(item);
+export async function createNewItem(grocery) {
+    const response = await client.from('grocery').insert(grocery);
     if (response.data) {
         return response.data;
     } else {
@@ -46,6 +46,12 @@ export async function createNewItem(newItem) {
     }
 }
 
+export async function fetchGrocery() {
+    const response = await client.from('grocery').select('*');
+    // console.log(post[0]);
+    return response.data;
+
+}
 
 // function checkError({ data, error }) {
 //     return error ? console.error(error) : data;
