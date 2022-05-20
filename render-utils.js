@@ -1,5 +1,5 @@
-import { togglePurchased } from "./fetch-utils.js";
-import { onLoad } from "./grocer/grocer.js";
+import { togglePurchased } from './fetch-utils.js';
+
 
 export function renderGroceries(grocery) {
 
