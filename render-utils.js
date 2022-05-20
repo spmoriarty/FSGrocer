@@ -1,5 +1,5 @@
 import { togglePurchased } from "./fetch-utils.js";
-
+import { onLoad } from "./grocer/grocer.js";
 
 export function renderGroceries(grocery) {
 
@@ -24,7 +24,8 @@ export function renderGroceries(grocery) {
     div.addEventListener('click', async () => {
         await togglePurchased(grocery);
         div.classList.toggle('purchased');
-        return;
-    })
+        onLoad();
+        
+    });
     return div;
 }

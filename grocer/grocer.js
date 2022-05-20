@@ -27,7 +27,7 @@ groceryForm.addEventListener('submit', async (e) => {
     onLoad();
 });
 
-async function onLoad() {
+export async function onLoad() {
     groceryList.textContent = '';
     const data = await fetchGrocery();
     for (let grocery of data) {

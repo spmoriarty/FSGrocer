@@ -66,13 +66,10 @@ export async function removeItems(id) {
 }
 
 export async function togglePurchased(item) {
-    const response = await client.from('grocery').update({ purchased: !item.purchased }).match(item, item.id);
+    const response = await client.from('grocery').update({ purchased: !item.purchased }).match({ id: item.id });
     
 
-    // const { data, error } = await supabase
-    // .from('grocery')
-    // .insert([{ some_column: 'someValue' }], { upsert: true })
-  
+
 
 
     return response.data;
