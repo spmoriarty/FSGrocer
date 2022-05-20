@@ -66,11 +66,8 @@ export async function removeItems(id) {
 }
 
 export async function togglePurchased(item) {
+    console.log(item);
     const response = await client.from('grocery').update({ purchased: !item.purchased }).match({ id: item.id });
     
-
-
-
-
     return response.data;
 }

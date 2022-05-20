@@ -6,7 +6,7 @@ export function renderGroceries(grocery) {
     
 
     const div = document.createElement('div');
-    div.classList.add('added');
+   // div.classList.add('added');
 
 
     // const a = document.createElement('a');
@@ -22,9 +22,11 @@ export function renderGroceries(grocery) {
     
     div.append(nameSpan, span);
     div.addEventListener('click', async () => {
+        grocery.purchased = !grocery.purchased;
+        
         await togglePurchased(grocery);
-        div.classList.toggle('purchased');
-        onLoad();
+        div.classList.toggle('added');
+        // onLoad();
         
     });
     return div;
