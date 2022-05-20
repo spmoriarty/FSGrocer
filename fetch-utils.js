@@ -40,6 +40,7 @@ export async function logout() {
 
 export async function createNewItem(item, qty) {
     const response = await client.from('grocery').insert({ item, qty });
+    //const resp = await client.from('grocery').update({ purchased: !item.purchased }).match(purchased, purchased.id);
 
     if (response.data) {
         return response.data;
@@ -65,12 +66,14 @@ export async function removeItems(id) {
 }
 
 export async function togglePurchased(item) {
+    const response = await client.from('grocery').update({ purchased: !item.purchased }).match(item, item.id);
     
-    const response = await client.from('grocery').update({ purchased: !item.purchased}).match( id, item.id);
-    
-    return response.data;
 
+    // const { data, error } = await supabase
+    // .from('grocery')
+    // .insert([{ some_column: 'someValue' }], { upsert: true })
+  
+
+
+    return response.data;
 }
-// function checkError({ data, error }) {
-//     return error ? console.error(error) : data;
-// }

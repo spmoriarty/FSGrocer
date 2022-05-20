@@ -18,9 +18,12 @@ groceryForm.addEventListener('submit', async (e) => {
     const data = new FormData(groceryForm);
     const newItem = { item: data.get('item-text'), qty: data.get('qty-text'),
     };
+    //await togglePurchased(newItem);
     const resp = await createNewItem(newItem.item, newItem.qty);
     console.log(resp);
+
     
+
     onLoad();
 });
 
