@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="grocer.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="gutter-right logo">
+            <img src="../assets/big-logo.png" />
+        </div>
+    </header>    
+    <button id="logout">Logout</button>
+    <main>
+        <h1>Gro-sure</h1>
+        <section>
+            <div id="form">
+                <form id="list">
+                    <label id="item-name">Grocery Item</label>
+                    <input type="text" id="item-text" name="item-text">
+                    <label id="qty-num">How many</label>
+                    <input type="text" id="qty-text" name="qty-text">
+                    <button id="addButton">Add to list</button>
+                </form>
+            </div>
+            <div >
+                <h3>Whats on the list?</h3>
+                <ul id="listItems">
+
+                </ul>
+            </div>
+            <div id="remove">
+                <h4>Time for a new list!</h4>
+                <button id="resetButton">Reset List</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        
+    </footer>
+    <script type="module" src="./grocer.js"></script>
+</body>
+
+</html>
